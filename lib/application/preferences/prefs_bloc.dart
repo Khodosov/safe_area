@@ -16,6 +16,9 @@ class PrefsBloc extends Bloc<PrefsEvent, PrefsState> {
           changeTheme: (_ChangeTheme value) {
             emit(state.copyWith(themeMode: value.themeMode));
           },
+          changeLocale: (_ChangeLocale value) {
+            emit(state.copyWith(locale: value.locale));
+          },
         );
       },
     );

@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:safe_area/presentation/tips/tips_screen.dart';
-
+import 'package:safe_area/application/navigation/navigation_bloc.dart';
+import 'package:safe_area/presentation/home/home_screen.dart';
 import 'application/di.dart';
 import 'application/preferences/prefs_bloc.dart';
 import 'constants/app_constants.dart';
@@ -28,8 +28,7 @@ void main() async {
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
-  static final RouteObserver<ModalRoute<void>> routeObserver =
-      RouteObserver<ModalRoute<void>>();
+  static final RouteObserver<ModalRoute<void>> routeObserver = RouteObserver<ModalRoute<void>>();
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +37,13 @@ class App extends StatelessWidget {
         BlocProvider<PrefsBloc>(
           create: (_) => PrefsBloc(),
         ),
+        BlocProvider<NavigationBloc>(
+          create: (_) => NavigationBloc(),
+        ),
       ],
       child: BlocBuilder<PrefsBloc, PrefsState>(
         buildWhen: (previous, current) {
-          return previous.themeMode != current.themeMode;
+          return previous != current;
         },
         builder: (context, state) {
           return MaterialApp(
@@ -55,15 +57,14 @@ class App extends StatelessWidget {
             navigatorObservers: [routeObserver],
             onGenerateRoute: (settings) {
               switch (settings.name) {
-                case '/tips':
+                case '/home':
                   return MaterialPageRoute(
-                      builder: (context) => const TipsScreen(),
-                      settings: settings);
-                // case '/settings':
-                //   return MaterialPageRoute(builder: (context) => const SettingsScreen(), settings: settings);
+                    builder: (context) => const HomeScreen(),
+                    settings: settings,
+                  );
               }
             },
-            initialRoute: '/tips',
+            initialRoute: '/home',
           );
         },
       ),

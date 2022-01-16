@@ -22,6 +22,12 @@ class _$PrefsEventTearOff {
       themeMode: themeMode,
     );
   }
+
+  _ChangeLocale changeLocale({required Locale locale}) {
+    return _ChangeLocale(
+      locale: locale,
+    );
+  }
 }
 
 /// @nodoc
@@ -29,43 +35,43 @@ const $PrefsEvent = _$PrefsEventTearOff();
 
 /// @nodoc
 mixin _$PrefsEvent {
-  ThemeMode get themeMode => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ThemeMode themeMode) changeTheme,
+    required TResult Function(Locale locale) changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(Locale locale)? changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(Locale locale)? changeLocale,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeLocale value) changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLocale value)? changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $PrefsEventCopyWith<PrefsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -74,7 +80,6 @@ abstract class $PrefsEventCopyWith<$Res> {
   factory $PrefsEventCopyWith(
           PrefsEvent value, $Res Function(PrefsEvent) then) =
       _$PrefsEventCopyWithImpl<$Res>;
-  $Res call({ThemeMode themeMode});
 }
 
 /// @nodoc
@@ -84,27 +89,13 @@ class _$PrefsEventCopyWithImpl<$Res> implements $PrefsEventCopyWith<$Res> {
   final PrefsEvent _value;
   // ignore: unused_field
   final $Res Function(PrefsEvent) _then;
-
-  @override
-  $Res call({
-    Object? themeMode = freezed,
-  }) {
-    return _then(_value.copyWith(
-      themeMode: themeMode == freezed
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$ChangeThemeCopyWith<$Res>
-    implements $PrefsEventCopyWith<$Res> {
+abstract class _$ChangeThemeCopyWith<$Res> {
   factory _$ChangeThemeCopyWith(
           _ChangeTheme value, $Res Function(_ChangeTheme) then) =
       __$ChangeThemeCopyWithImpl<$Res>;
-  @override
   $Res call({ThemeMode themeMode});
 }
 
@@ -165,6 +156,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ThemeMode themeMode) changeTheme,
+    required TResult Function(Locale locale) changeLocale,
   }) {
     return changeTheme(themeMode);
   }
@@ -173,6 +165,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(Locale locale)? changeLocale,
   }) {
     return changeTheme?.call(themeMode);
   }
@@ -181,6 +174,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(Locale locale)? changeLocale,
     required TResult orElse(),
   }) {
     if (changeTheme != null) {
@@ -193,6 +187,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeLocale value) changeLocale,
   }) {
     return changeTheme(this);
   }
@@ -201,6 +196,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLocale value)? changeLocale,
   }) {
     return changeTheme?.call(this);
   }
@@ -209,6 +205,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) {
     if (changeTheme != null) {
@@ -221,11 +218,141 @@ class _$_ChangeTheme implements _ChangeTheme {
 abstract class _ChangeTheme implements PrefsEvent {
   const factory _ChangeTheme({required ThemeMode themeMode}) = _$_ChangeTheme;
 
-  @override
   ThemeMode get themeMode;
-  @override
   @JsonKey(ignore: true)
   _$ChangeThemeCopyWith<_ChangeTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ChangeLocaleCopyWith<$Res> {
+  factory _$ChangeLocaleCopyWith(
+          _ChangeLocale value, $Res Function(_ChangeLocale) then) =
+      __$ChangeLocaleCopyWithImpl<$Res>;
+  $Res call({Locale locale});
+}
+
+/// @nodoc
+class __$ChangeLocaleCopyWithImpl<$Res> extends _$PrefsEventCopyWithImpl<$Res>
+    implements _$ChangeLocaleCopyWith<$Res> {
+  __$ChangeLocaleCopyWithImpl(
+      _ChangeLocale _value, $Res Function(_ChangeLocale) _then)
+      : super(_value, (v) => _then(v as _ChangeLocale));
+
+  @override
+  _ChangeLocale get _value => super._value as _ChangeLocale;
+
+  @override
+  $Res call({
+    Object? locale = freezed,
+  }) {
+    return _then(_ChangeLocale(
+      locale: locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ChangeLocale implements _ChangeLocale {
+  const _$_ChangeLocale({required this.locale});
+
+  @override
+  final Locale locale;
+
+  @override
+  String toString() {
+    return 'PrefsEvent.changeLocale(locale: $locale)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChangeLocale &&
+            (identical(other.locale, locale) || other.locale == locale));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, locale);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ChangeLocaleCopyWith<_ChangeLocale> get copyWith =>
+      __$ChangeLocaleCopyWithImpl<_ChangeLocale>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ThemeMode themeMode) changeTheme,
+    required TResult Function(Locale locale) changeLocale,
+  }) {
+    return changeLocale(locale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(Locale locale)? changeLocale,
+  }) {
+    return changeLocale?.call(locale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(Locale locale)? changeLocale,
+    required TResult orElse(),
+  }) {
+    if (changeLocale != null) {
+      return changeLocale(locale);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeLocale value) changeLocale,
+  }) {
+    return changeLocale(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLocale value)? changeLocale,
+  }) {
+    return changeLocale?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLocale value)? changeLocale,
+    required TResult orElse(),
+  }) {
+    if (changeLocale != null) {
+      return changeLocale(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeLocale implements PrefsEvent {
+  const factory _ChangeLocale({required Locale locale}) = _$_ChangeLocale;
+
+  Locale get locale;
+  @JsonKey(ignore: true)
+  _$ChangeLocaleCopyWith<_ChangeLocale> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -233,8 +360,9 @@ abstract class _ChangeTheme implements PrefsEvent {
 class _$PrefsStateTearOff {
   const _$PrefsStateTearOff();
 
-  _PrefsState call({required ThemeMode themeMode}) {
+  _PrefsState call({required Locale locale, required ThemeMode themeMode}) {
     return _PrefsState(
+      locale: locale,
       themeMode: themeMode,
     );
   }
@@ -245,6 +373,7 @@ const $PrefsState = _$PrefsStateTearOff();
 
 /// @nodoc
 mixin _$PrefsState {
+  Locale get locale => throw _privateConstructorUsedError;
   ThemeMode get themeMode => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -257,7 +386,7 @@ abstract class $PrefsStateCopyWith<$Res> {
   factory $PrefsStateCopyWith(
           PrefsState value, $Res Function(PrefsState) then) =
       _$PrefsStateCopyWithImpl<$Res>;
-  $Res call({ThemeMode themeMode});
+  $Res call({Locale locale, ThemeMode themeMode});
 }
 
 /// @nodoc
@@ -270,9 +399,14 @@ class _$PrefsStateCopyWithImpl<$Res> implements $PrefsStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? locale = freezed,
     Object? themeMode = freezed,
   }) {
     return _then(_value.copyWith(
+      locale: locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
       themeMode: themeMode == freezed
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
@@ -287,7 +421,7 @@ abstract class _$PrefsStateCopyWith<$Res> implements $PrefsStateCopyWith<$Res> {
           _PrefsState value, $Res Function(_PrefsState) then) =
       __$PrefsStateCopyWithImpl<$Res>;
   @override
-  $Res call({ThemeMode themeMode});
+  $Res call({Locale locale, ThemeMode themeMode});
 }
 
 /// @nodoc
@@ -302,9 +436,14 @@ class __$PrefsStateCopyWithImpl<$Res> extends _$PrefsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? locale = freezed,
     Object? themeMode = freezed,
   }) {
     return _then(_PrefsState(
+      locale: locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
       themeMode: themeMode == freezed
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
@@ -316,14 +455,16 @@ class __$PrefsStateCopyWithImpl<$Res> extends _$PrefsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PrefsState implements _PrefsState {
-  const _$_PrefsState({required this.themeMode});
+  const _$_PrefsState({required this.locale, required this.themeMode});
 
+  @override
+  final Locale locale;
   @override
   final ThemeMode themeMode;
 
   @override
   String toString() {
-    return 'PrefsState(themeMode: $themeMode)';
+    return 'PrefsState(locale: $locale, themeMode: $themeMode)';
   }
 
   @override
@@ -331,12 +472,13 @@ class _$_PrefsState implements _PrefsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PrefsState &&
+            (identical(other.locale, locale) || other.locale == locale) &&
             (identical(other.themeMode, themeMode) ||
                 other.themeMode == themeMode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, themeMode);
+  int get hashCode => Object.hash(runtimeType, locale, themeMode);
 
   @JsonKey(ignore: true)
   @override
@@ -345,8 +487,11 @@ class _$_PrefsState implements _PrefsState {
 }
 
 abstract class _PrefsState implements PrefsState {
-  const factory _PrefsState({required ThemeMode themeMode}) = _$_PrefsState;
+  const factory _PrefsState(
+      {required Locale locale, required ThemeMode themeMode}) = _$_PrefsState;
 
+  @override
+  Locale get locale;
   @override
   ThemeMode get themeMode;
   @override
