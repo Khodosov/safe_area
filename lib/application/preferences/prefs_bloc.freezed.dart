@@ -17,6 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$PrefsEventTearOff {
   const _$PrefsEventTearOff();
 
+  _ConfigPrefs configPrefs() {
+    return const _ConfigPrefs();
+  }
+
   _ChangeTheme changeTheme({required ThemeMode themeMode}) {
     return _ChangeTheme(
       themeMode: themeMode,
@@ -37,18 +41,21 @@ const $PrefsEvent = _$PrefsEventTearOff();
 mixin _$PrefsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() configPrefs,
     required TResult Function(ThemeMode themeMode) changeTheme,
     required TResult Function(Locale locale) changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? configPrefs,
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(Locale locale)? changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? configPrefs,
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(Locale locale)? changeLocale,
     required TResult orElse(),
@@ -56,18 +63,21 @@ mixin _$PrefsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_ConfigPrefs value) configPrefs,
     required TResult Function(_ChangeTheme value) changeTheme,
     required TResult Function(_ChangeLocale value) changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ConfigPrefs value)? configPrefs,
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeLocale value)? changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ConfigPrefs value)? configPrefs,
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeLocale value)? changeLocale,
     required TResult orElse(),
@@ -89,6 +99,116 @@ class _$PrefsEventCopyWithImpl<$Res> implements $PrefsEventCopyWith<$Res> {
   final PrefsEvent _value;
   // ignore: unused_field
   final $Res Function(PrefsEvent) _then;
+}
+
+/// @nodoc
+abstract class _$ConfigPrefsCopyWith<$Res> {
+  factory _$ConfigPrefsCopyWith(
+          _ConfigPrefs value, $Res Function(_ConfigPrefs) then) =
+      __$ConfigPrefsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ConfigPrefsCopyWithImpl<$Res> extends _$PrefsEventCopyWithImpl<$Res>
+    implements _$ConfigPrefsCopyWith<$Res> {
+  __$ConfigPrefsCopyWithImpl(
+      _ConfigPrefs _value, $Res Function(_ConfigPrefs) _then)
+      : super(_value, (v) => _then(v as _ConfigPrefs));
+
+  @override
+  _ConfigPrefs get _value => super._value as _ConfigPrefs;
+}
+
+/// @nodoc
+
+class _$_ConfigPrefs implements _ConfigPrefs {
+  const _$_ConfigPrefs();
+
+  @override
+  String toString() {
+    return 'PrefsEvent.configPrefs()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ConfigPrefs);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() configPrefs,
+    required TResult Function(ThemeMode themeMode) changeTheme,
+    required TResult Function(Locale locale) changeLocale,
+  }) {
+    return configPrefs();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? configPrefs,
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(Locale locale)? changeLocale,
+  }) {
+    return configPrefs?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? configPrefs,
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(Locale locale)? changeLocale,
+    required TResult orElse(),
+  }) {
+    if (configPrefs != null) {
+      return configPrefs();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ConfigPrefs value) configPrefs,
+    required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeLocale value) changeLocale,
+  }) {
+    return configPrefs(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ConfigPrefs value)? configPrefs,
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLocale value)? changeLocale,
+  }) {
+    return configPrefs?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ConfigPrefs value)? configPrefs,
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLocale value)? changeLocale,
+    required TResult orElse(),
+  }) {
+    if (configPrefs != null) {
+      return configPrefs(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ConfigPrefs implements PrefsEvent {
+  const factory _ConfigPrefs() = _$_ConfigPrefs;
 }
 
 /// @nodoc
@@ -155,6 +275,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() configPrefs,
     required TResult Function(ThemeMode themeMode) changeTheme,
     required TResult Function(Locale locale) changeLocale,
   }) {
@@ -164,6 +285,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? configPrefs,
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(Locale locale)? changeLocale,
   }) {
@@ -173,6 +295,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? configPrefs,
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(Locale locale)? changeLocale,
     required TResult orElse(),
@@ -186,6 +309,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_ConfigPrefs value) configPrefs,
     required TResult Function(_ChangeTheme value) changeTheme,
     required TResult Function(_ChangeLocale value) changeLocale,
   }) {
@@ -195,6 +319,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ConfigPrefs value)? configPrefs,
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeLocale value)? changeLocale,
   }) {
@@ -204,6 +329,7 @@ class _$_ChangeTheme implements _ChangeTheme {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ConfigPrefs value)? configPrefs,
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeLocale value)? changeLocale,
     required TResult orElse(),
@@ -287,6 +413,7 @@ class _$_ChangeLocale implements _ChangeLocale {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() configPrefs,
     required TResult Function(ThemeMode themeMode) changeTheme,
     required TResult Function(Locale locale) changeLocale,
   }) {
@@ -296,6 +423,7 @@ class _$_ChangeLocale implements _ChangeLocale {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? configPrefs,
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(Locale locale)? changeLocale,
   }) {
@@ -305,6 +433,7 @@ class _$_ChangeLocale implements _ChangeLocale {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? configPrefs,
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(Locale locale)? changeLocale,
     required TResult orElse(),
@@ -318,6 +447,7 @@ class _$_ChangeLocale implements _ChangeLocale {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_ConfigPrefs value) configPrefs,
     required TResult Function(_ChangeTheme value) changeTheme,
     required TResult Function(_ChangeLocale value) changeLocale,
   }) {
@@ -327,6 +457,7 @@ class _$_ChangeLocale implements _ChangeLocale {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ConfigPrefs value)? configPrefs,
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeLocale value)? changeLocale,
   }) {
@@ -336,6 +467,7 @@ class _$_ChangeLocale implements _ChangeLocale {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ConfigPrefs value)? configPrefs,
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeLocale value)? changeLocale,
     required TResult orElse(),

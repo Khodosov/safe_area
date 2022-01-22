@@ -13,7 +13,7 @@ class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {
     on<NavigationEvent>(
       (event, emit) {
         event.map(
-          changeTab: (_ChangeTab value) {
+          changeTab: (_ChangeTab value) async {
             emit(state.copyWith(tab: value.tab));
           },
         );

@@ -16,7 +16,9 @@ class HomeScreen extends StatelessWidget {
             left: 0,
             child: BottomBarWidget(),
           ),
-          TabCard(),
+          TabCard(
+            
+          ),
         ],
       ),
     );

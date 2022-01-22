@@ -35,7 +35,7 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<PrefsBloc>(
-          create: (_) => PrefsBloc(),
+          create: (_) => PrefsBloc(),//..add(const PrefsEvent.configPrefs()),
         ),
         BlocProvider<NavigationBloc>(
           create: (_) => NavigationBloc(),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:safe_area/application/navigation/navigation_bloc.dart';
 import 'package:safe_area/constants/app_constants.dart';
 import 'package:safe_area/domain/models/app_tab.dart';
+import 'package:safe_area/presentation/map/map_widget.dart';
 import 'package:safe_area/presentation/settings/settings.dart';
 import 'package:safe_area/presentation/tips/tips.dart';
 
@@ -22,6 +23,7 @@ class TabCard extends StatelessWidget {
             child = const TipsContent();
             break;
           default:
+            child = const MapWidget();
             break;
         }
         return Padding(
