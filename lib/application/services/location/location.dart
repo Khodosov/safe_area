@@ -12,7 +12,6 @@ class LocationFetcher {
 
   Future<LocationData?> get currentLocation async {
     bool _serviceEnabled = await _location.serviceEnabled();
-    _serviceEnabled = await _location.requestService();
     if (!_serviceEnabled) {
       _serviceEnabled = await _location.requestService();
       if (!_serviceEnabled) {
