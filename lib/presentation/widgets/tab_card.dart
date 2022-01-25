@@ -8,12 +8,17 @@ import 'package:safe_area/presentation/settings/settings.dart';
 import 'package:safe_area/presentation/tips/tips.dart';
 
 class TabCard extends StatelessWidget {
-  const TabCard({Key? key}) : super(key: key);
+  const TabCard({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NavigationBloc, NavigationState>(
       builder: (context, state) {
+        bool bottom = false;
+        bool top = true;
+
         Widget child = const SizedBox.expand();
         switch (state.tab) {
           case AppTab.settings:
@@ -24,6 +29,7 @@ class TabCard extends StatelessWidget {
             break;
           default:
             child = const MapWidget();
+            top = false;
             break;
         }
         return Padding(
@@ -33,7 +39,8 @@ class TabCard extends StatelessWidget {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppConstants.bigRadius)),
             elevation: 10,
             child: SafeArea(
-              bottom: false,
+              bottom: bottom,
+              top: top,
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: child,

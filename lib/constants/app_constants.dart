@@ -10,6 +10,8 @@ class AppConstants {
 
   static const double subtitleFontSize = 14;
 
+  static const double zoom = 0.4;
+
   static final theme = ThemeData(
     checkboxTheme: CheckboxThemeData(
       checkColor: MaterialStateProperty.all(ThemeData().cardColor),

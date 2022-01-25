@@ -1,3 +1,4 @@
+import 'package:flutter_map/plugin_api.dart';
 import 'package:get_it/get_it.dart';
 import 'package:safe_area/application/services/connectivity/connectivity_ensure.dart';
 import 'package:safe_area/application/services/location/location.dart';
@@ -23,5 +24,4 @@ class Locator {
   static PreferencesSaver get preferences => _locator<PreferencesSaver>();
 
   static NetworkRequests get network => _locator<NetworkRequests>();
-  
 }

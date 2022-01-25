@@ -25,6 +25,7 @@ dependencies:
   geolocator: ^8.0.3
   shared_preferences: ^2.0.12
   syncfusion_flutter_maps: ^19.4.43-beta
+  flutter_map: ^0.14.0
 
 dev_dependencies:
   flutter_test:
