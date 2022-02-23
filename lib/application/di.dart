@@ -15,7 +15,10 @@ class Locator {
     _locator.registerLazySingleton<LocationFetcher>(() => LocationFetcher());
     _locator.registerLazySingleton<PreferencesSaver>(() => PreferencesSaver());
     _locator.registerLazySingleton<NetworkRequests>(() => NetworkRequests());
+    _locator.registerLazySingleton<MapController>(() => MapController());
   }
+
+  static MapController get mapController => _locator<MapController>();
 
   static ConnectivityEnsure get connectivity => _locator<ConnectivityEnsure>();
 

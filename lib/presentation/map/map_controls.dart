@@ -1,37 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:safe_area/application/di.dart';
 import 'package:safe_area/constants/app_constants.dart';
 
 class MapControls extends StatelessWidget {
-  final MapController controller;
-  const MapControls({
-    Key? key,
-    required this.controller,
-  }) : super(key: key);
+  const MapControls({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).cardColor.withOpacity(0.7),
-        borderRadius: BorderRadiusDirectional.circular(AppConstants.smallRadius),
-      ),
-      child: Column(
-        children: [
-          IconButton(
-            onPressed: () {
-              controller.move(controller.center, controller.zoom + AppConstants.zoom);
-            },
-            icon: const Icon(Icons.zoom_in),
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor.withOpacity(0.7),
+            borderRadius: BorderRadiusDirectional.circular(AppConstants.smallRadius),
           ),
-          IconButton(
-            onPressed: () {
-              controller.move(controller.center, controller.zoom - AppConstants.zoom);
-            },
-            icon: const Icon(Icons.zoom_out),
+          child: Column(
+            children: [
+              IconButton(
+                onPressed: () {
+                  Locator.mapController
+                      .move(Locator.mapController.center, Locator.mapController.zoom + AppConstants.zoom);
+                },
+                icon: const Icon(Icons.zoom_in),
+              ),
+              IconButton(
+                onPressed: () {
+                  Locator.mapController
+                      .move(Locator.mapController.center, Locator.mapController.zoom - AppConstants.zoom);
+                },
+                icon: const Icon(Icons.zoom_out),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        const SizedBox(
+          height: 100,
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor.withOpacity(0.7),
+            borderRadius: BorderRadiusDirectional.circular(AppConstants.smallRadius),
+          ),
+          child: IconButton(
+            icon: const Icon(Icons.place),
+            onPressed: null,
+          ),
+        ),
+      ],
     );
   }
 }

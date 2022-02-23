@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:safe_area/application/navigation/navigation_bloc.dart';
+import 'package:safe_area/application/tab_navigation/navigation_bloc.dart';
 import 'package:safe_area/constants/app_constants.dart';
 import 'package:safe_area/domain/models/app_tab.dart';
 import 'package:safe_area/presentation/map/map_widget.dart';

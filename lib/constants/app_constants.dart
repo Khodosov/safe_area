@@ -64,4 +64,5 @@ class AppConstants {
       },
     ).whenComplete(() => isBadConnectionShown = false);
   }
+
 }
