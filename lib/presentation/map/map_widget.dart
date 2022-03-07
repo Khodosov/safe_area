@@ -56,7 +56,7 @@ class MapWidget extends StatelessWidget {
                                     state.currentLocation!.longitude ?? 0,
                                   ),
                                   builder: (ctx) => const Icon(
-                                    Icons.person_pin_circle_rounded,
+                                    Icons.account_circle_rounded,
                                     color: Colors.redAccent,
                                     size: 35,
                                   ),

@@ -11,7 +11,7 @@ import 'package:safe_area/domain/dtos/polygon_data/polygon_dto.dart';
 class NetworkRequests {
   final _dio = Dio();
 
-  final _link = 'ip172-18-0-10-c8b489k1r0f000fdndp0.direct.labs.play-with-k8s.com';
+  final _link = 'ip172-18-0-29-c8b7jls1r0f000fdnhlg.direct.labs.play-with-k8s.com';
 
   Future<void> updatePolygons({
     required BuildContext context,

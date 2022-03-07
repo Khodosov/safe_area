@@ -33,10 +33,13 @@ class LocationFetcher {
     }
     if (_serviceEnabled && _permissionStatus == PermissionStatus.granted) {
       _locationSubscription = _location.onLocationChanged.listen((LocationData currentLocation) {
-        log('location fetched : ${currentLocation.toString()}');
-        Locator.network.updatePolygons(context: context, location: currentLocation);
+        log('[locationStream] location fetched : ${currentLocation.toString()}');
+
+        // Locator.network.updatePolygons(context: context, location: currentLocation);
+
         BlocProvider.of<MapManagerBloc>(context)
             .add(MapManagerEvent.changeLocation(locationData: currentLocation));
+        log('[locationStream] location state updated');
       });
     }
   }
