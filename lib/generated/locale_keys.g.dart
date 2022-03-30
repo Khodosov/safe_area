@@ -11,5 +11,7 @@ abstract class  LocaleKeys {
   static const tips__distance_tip = 'tips__distance_tip';
   static const tips__wear_mask = 'tips__wear_mask';
   static const tips__clean_hands = 'tips__clean_hands';
+  static const hive_list_length = 'hive_list_length';
+  static const sqflite_sp_list_length = 'sqflite_sp_list_length';
 
 }

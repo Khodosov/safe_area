@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:safe_area/application/data_saver/data_saver_bloc.dart';
 import 'package:safe_area/presentation/home/home_screen.dart';
 import 'application/di.dart';
 import 'application/map_manage/map_manager_bloc.dart';
@@ -10,6 +11,11 @@ import 'constants/app_constants.dart';
 
 void main() async {
   Locator.initLocator();
+
+  Locator.hiveManager.hiveInit();
+  Locator.sharedPreferencesManager.sharedPreferencesInit();
+  Locator.sqfliteManager.sqfliteInit();
+
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(
@@ -46,13 +52,16 @@ class _AppState extends State<App> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<PrefsBloc>(
-          create: (_) => PrefsBloc(),//..add(const PrefsEvent.configPrefs()),
+          create: (_) => PrefsBloc(), //..add(const PrefsEvent.configPrefs()),
         ),
         BlocProvider<NavigationBloc>(
           create: (_) => NavigationBloc(),
         ),
         BlocProvider<MapManagerBloc>(
           create: (_) => MapManagerBloc(),
+        ),
+        BlocProvider<DataSaverBloc>(
+          create: (_) => DataSaverBloc(),
         ),
       ],
       child: BlocBuilder<PrefsBloc, PrefsState>(

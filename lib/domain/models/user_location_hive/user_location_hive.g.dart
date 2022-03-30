@@ -8,7 +8,7 @@ part of 'user_location_hive.dart';
 
 class UserLocationHiveAdapter extends TypeAdapter<UserLocationHive> {
   @override
-  final int typeId = 1;
+  final int typeId = 0;
 
   @override
   UserLocationHive read(BinaryReader reader) {
@@ -17,7 +17,7 @@ class UserLocationHiveAdapter extends TypeAdapter<UserLocationHive> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return UserLocationHive(
-      time: fields[0] as int,
+      time: fields[0] as String,
       latitude: fields[1] as double,
       longitude: fields[2] as double,
     );

@@ -28,6 +28,10 @@ class _$MapManagerEventTearOff {
       polygons: polygons,
     );
   }
+
+  _CenterCamera centerCamera() {
+    return const _CenterCamera();
+  }
 }
 
 /// @nodoc
@@ -39,18 +43,21 @@ mixin _$MapManagerEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(LocationData locationData) changeLocation,
     required TResult Function(List<Polygon> polygons) updatePolygons,
+    required TResult Function() centerCamera,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(LocationData locationData)? changeLocation,
     TResult Function(List<Polygon> polygons)? updatePolygons,
+    TResult Function()? centerCamera,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LocationData locationData)? changeLocation,
     TResult Function(List<Polygon> polygons)? updatePolygons,
+    TResult Function()? centerCamera,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -58,18 +65,21 @@ mixin _$MapManagerEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeLocation value) changeLocation,
     required TResult Function(_UpdatePolygons value) updatePolygons,
+    required TResult Function(_CenterCamera value) centerCamera,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ChangeLocation value)? changeLocation,
     TResult Function(_UpdatePolygons value)? updatePolygons,
+    TResult Function(_CenterCamera value)? centerCamera,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeLocation value)? changeLocation,
     TResult Function(_UpdatePolygons value)? updatePolygons,
+    TResult Function(_CenterCamera value)? centerCamera,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -159,6 +169,7 @@ class _$_ChangeLocation implements _ChangeLocation {
   TResult when<TResult extends Object?>({
     required TResult Function(LocationData locationData) changeLocation,
     required TResult Function(List<Polygon> polygons) updatePolygons,
+    required TResult Function() centerCamera,
   }) {
     return changeLocation(locationData);
   }
@@ -168,6 +179,7 @@ class _$_ChangeLocation implements _ChangeLocation {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(LocationData locationData)? changeLocation,
     TResult Function(List<Polygon> polygons)? updatePolygons,
+    TResult Function()? centerCamera,
   }) {
     return changeLocation?.call(locationData);
   }
@@ -177,6 +189,7 @@ class _$_ChangeLocation implements _ChangeLocation {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LocationData locationData)? changeLocation,
     TResult Function(List<Polygon> polygons)? updatePolygons,
+    TResult Function()? centerCamera,
     required TResult orElse(),
   }) {
     if (changeLocation != null) {
@@ -190,6 +203,7 @@ class _$_ChangeLocation implements _ChangeLocation {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeLocation value) changeLocation,
     required TResult Function(_UpdatePolygons value) updatePolygons,
+    required TResult Function(_CenterCamera value) centerCamera,
   }) {
     return changeLocation(this);
   }
@@ -199,6 +213,7 @@ class _$_ChangeLocation implements _ChangeLocation {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ChangeLocation value)? changeLocation,
     TResult Function(_UpdatePolygons value)? updatePolygons,
+    TResult Function(_CenterCamera value)? centerCamera,
   }) {
     return changeLocation?.call(this);
   }
@@ -208,6 +223,7 @@ class _$_ChangeLocation implements _ChangeLocation {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeLocation value)? changeLocation,
     TResult Function(_UpdatePolygons value)? updatePolygons,
+    TResult Function(_CenterCamera value)? centerCamera,
     required TResult orElse(),
   }) {
     if (changeLocation != null) {
@@ -294,6 +310,7 @@ class _$_UpdatePolygons implements _UpdatePolygons {
   TResult when<TResult extends Object?>({
     required TResult Function(LocationData locationData) changeLocation,
     required TResult Function(List<Polygon> polygons) updatePolygons,
+    required TResult Function() centerCamera,
   }) {
     return updatePolygons(polygons);
   }
@@ -303,6 +320,7 @@ class _$_UpdatePolygons implements _UpdatePolygons {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(LocationData locationData)? changeLocation,
     TResult Function(List<Polygon> polygons)? updatePolygons,
+    TResult Function()? centerCamera,
   }) {
     return updatePolygons?.call(polygons);
   }
@@ -312,6 +330,7 @@ class _$_UpdatePolygons implements _UpdatePolygons {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LocationData locationData)? changeLocation,
     TResult Function(List<Polygon> polygons)? updatePolygons,
+    TResult Function()? centerCamera,
     required TResult orElse(),
   }) {
     if (updatePolygons != null) {
@@ -325,6 +344,7 @@ class _$_UpdatePolygons implements _UpdatePolygons {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeLocation value) changeLocation,
     required TResult Function(_UpdatePolygons value) updatePolygons,
+    required TResult Function(_CenterCamera value) centerCamera,
   }) {
     return updatePolygons(this);
   }
@@ -334,6 +354,7 @@ class _$_UpdatePolygons implements _UpdatePolygons {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ChangeLocation value)? changeLocation,
     TResult Function(_UpdatePolygons value)? updatePolygons,
+    TResult Function(_CenterCamera value)? centerCamera,
   }) {
     return updatePolygons?.call(this);
   }
@@ -343,6 +364,7 @@ class _$_UpdatePolygons implements _UpdatePolygons {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeLocation value)? changeLocation,
     TResult Function(_UpdatePolygons value)? updatePolygons,
+    TResult Function(_CenterCamera value)? centerCamera,
     required TResult orElse(),
   }) {
     if (updatePolygons != null) {
@@ -360,6 +382,117 @@ abstract class _UpdatePolygons implements MapManagerEvent {
   @JsonKey(ignore: true)
   _$UpdatePolygonsCopyWith<_UpdatePolygons> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$CenterCameraCopyWith<$Res> {
+  factory _$CenterCameraCopyWith(
+          _CenterCamera value, $Res Function(_CenterCamera) then) =
+      __$CenterCameraCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CenterCameraCopyWithImpl<$Res>
+    extends _$MapManagerEventCopyWithImpl<$Res>
+    implements _$CenterCameraCopyWith<$Res> {
+  __$CenterCameraCopyWithImpl(
+      _CenterCamera _value, $Res Function(_CenterCamera) _then)
+      : super(_value, (v) => _then(v as _CenterCamera));
+
+  @override
+  _CenterCamera get _value => super._value as _CenterCamera;
+}
+
+/// @nodoc
+
+class _$_CenterCamera implements _CenterCamera {
+  const _$_CenterCamera();
+
+  @override
+  String toString() {
+    return 'MapManagerEvent.centerCamera()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _CenterCamera);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LocationData locationData) changeLocation,
+    required TResult Function(List<Polygon> polygons) updatePolygons,
+    required TResult Function() centerCamera,
+  }) {
+    return centerCamera();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(LocationData locationData)? changeLocation,
+    TResult Function(List<Polygon> polygons)? updatePolygons,
+    TResult Function()? centerCamera,
+  }) {
+    return centerCamera?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LocationData locationData)? changeLocation,
+    TResult Function(List<Polygon> polygons)? updatePolygons,
+    TResult Function()? centerCamera,
+    required TResult orElse(),
+  }) {
+    if (centerCamera != null) {
+      return centerCamera();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeLocation value) changeLocation,
+    required TResult Function(_UpdatePolygons value) updatePolygons,
+    required TResult Function(_CenterCamera value) centerCamera,
+  }) {
+    return centerCamera(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ChangeLocation value)? changeLocation,
+    TResult Function(_UpdatePolygons value)? updatePolygons,
+    TResult Function(_CenterCamera value)? centerCamera,
+  }) {
+    return centerCamera?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeLocation value)? changeLocation,
+    TResult Function(_UpdatePolygons value)? updatePolygons,
+    TResult Function(_CenterCamera value)? centerCamera,
+    required TResult orElse(),
+  }) {
+    if (centerCamera != null) {
+      return centerCamera(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CenterCamera implements MapManagerEvent {
+  const factory _CenterCamera() = _$_CenterCamera;
 }
 
 /// @nodoc

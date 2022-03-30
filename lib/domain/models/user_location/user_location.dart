@@ -7,7 +7,7 @@ part 'user_location.g.dart';
 @freezed
 class UserLocation with _$UserLocation {
   const factory UserLocation({
-    required int time,
+    required String time,
     required double latitude,
     required double longitude,
   }) = _UserLocation;

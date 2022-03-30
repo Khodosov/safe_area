@@ -8,7 +8,7 @@ part of 'user_location.dart';
 
 _$_UserLocation _$$_UserLocationFromJson(Map<String, dynamic> json) =>
     _$_UserLocation(
-      time: json['time'] as int,
+      time: json['time'] as String,
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
     );

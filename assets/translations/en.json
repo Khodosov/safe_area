@@ -8,5 +8,7 @@
   "language__header": "Language",
   "tips__distance_tip": "Keep a distance of at least 1 meter from people, especially if they have a cough, runny nose and fever. When staying indoors, additional distance must be observed. The further away you stay, the safer.",
   "tips__wear_mask": "Get into the habit of wearing a mask in public places. Masks must be properly used, stored, handled and disposed of in order to maximize their effectiveness.",
-  "tips__clean_hands":"Clean your hands regularly with alcohol-based hand rub or wash them with soap and water. This measure will eliminate possible microbial contamination of hands, including viral ones."
+  "tips__clean_hands":"Clean your hands regularly with alcohol-based hand rub or wash them with soap and water. This measure will eliminate possible microbial contamination of hands, including viral ones.",
+  "hive_list_length" :"Points saved for Hive:",
+  "sqflite_sp_list_length": "Points saved for SQFLite & Shared Preferences:"
 }

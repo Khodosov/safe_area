@@ -22,7 +22,7 @@ class _$UserLocationTearOff {
   const _$UserLocationTearOff();
 
   _UserLocation call(
-      {required int time,
+      {required String time,
       required double latitude,
       required double longitude}) {
     return _UserLocation(
@@ -42,7 +42,7 @@ const $UserLocation = _$UserLocationTearOff();
 
 /// @nodoc
 mixin _$UserLocation {
-  int get time => throw _privateConstructorUsedError;
+  String get time => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
 
@@ -57,7 +57,7 @@ abstract class $UserLocationCopyWith<$Res> {
   factory $UserLocationCopyWith(
           UserLocation value, $Res Function(UserLocation) then) =
       _$UserLocationCopyWithImpl<$Res>;
-  $Res call({int time, double latitude, double longitude});
+  $Res call({String time, double latitude, double longitude});
 }
 
 /// @nodoc
@@ -78,7 +78,7 @@ class _$UserLocationCopyWithImpl<$Res> implements $UserLocationCopyWith<$Res> {
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       latitude: latitude == freezed
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -98,7 +98,7 @@ abstract class _$UserLocationCopyWith<$Res>
           _UserLocation value, $Res Function(_UserLocation) then) =
       __$UserLocationCopyWithImpl<$Res>;
   @override
-  $Res call({int time, double latitude, double longitude});
+  $Res call({String time, double latitude, double longitude});
 }
 
 /// @nodoc
@@ -121,7 +121,7 @@ class __$UserLocationCopyWithImpl<$Res> extends _$UserLocationCopyWithImpl<$Res>
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       latitude: latitude == freezed
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -144,7 +144,7 @@ class _$_UserLocation implements _UserLocation {
       _$$_UserLocationFromJson(json);
 
   @override
-  final int time;
+  final String time;
   @override
   final double latitude;
   @override
@@ -183,7 +183,7 @@ class _$_UserLocation implements _UserLocation {
 
 abstract class _UserLocation implements UserLocation {
   const factory _UserLocation(
-      {required int time,
+      {required String time,
       required double latitude,
       required double longitude}) = _$_UserLocation;
 
@@ -191,7 +191,7 @@ abstract class _UserLocation implements UserLocation {
       _$_UserLocation.fromJson;
 
   @override
-  int get time;
+  String get time;
   @override
   double get latitude;
   @override

@@ -2,10 +2,10 @@ import 'package:hive/hive.dart';
 
 part 'user_location_hive.g.dart';
 
-@HiveType(typeId: 1)
+@HiveType(typeId: 0)
 class UserLocationHive {
   @HiveField(0)
-  final int time;
+  final String time;
   @HiveField(1)
   final double latitude;
   @HiveField(2)

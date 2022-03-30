@@ -8,6 +8,7 @@ import 'package:safe_area/application/di.dart';
 import 'package:latlong2/latlong.dart' as latLng;
 import 'package:safe_area/application/map_manage/map_manager_bloc.dart';
 import 'package:safe_area/constants/app_constants.dart';
+import 'package:safe_area/presentation/map/date_save_controls.dart';
 import 'package:safe_area/presentation/map/map_controls.dart';
 
 class MapWidget extends StatelessWidget {
@@ -16,7 +17,7 @@ class MapWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<LocationData?>(
-      stream: Locator.location.locationStream(context),
+      stream: Locator.locationDataSaver.locationStream(context),
       builder: (context, future) {
         if (future.hasData) {
           BlocProvider.of<MapManagerBloc>(context).add(MapManagerEvent.changeLocation(locationData: future.data!));
@@ -70,6 +71,11 @@ class MapWidget extends StatelessWidget {
                         right: 10,
                         bottom: 30,
                         child: MapControls(),
+                      ),
+                      const Positioned(
+                        left: 10,
+                        bottom: 30,
+                        child: DataSaveControls(),
                       ),
                     ],
                   )
